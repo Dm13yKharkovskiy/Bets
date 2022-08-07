@@ -7,7 +7,7 @@ public class BetMain {
 
     public static void main(String[] args) throws IOException {
 
-        Storage storage = new Storage();
+        Storage storageBets = new Storage();
         int bet;
         String exit;
         boolean answer = false;
@@ -30,7 +30,7 @@ public class BetMain {
                         bet = inputBet.nextInt();
                         Bet myBetConsole = new Bet(bet);
                         try {
-                            storage.add(myBetConsole.getValue());
+                            storageBets.add(myBetConsole.getValue());
                         } catch (BetException e) {
                             System.out.println(e.getMessage());
                         }
@@ -48,7 +48,7 @@ public class BetMain {
                     }
 
                 } while (answer == false);
-                storage.show();
+                storageBets.show();
                 break;
             default:
                 System.out.println("Вы сделали неверный выбор");
